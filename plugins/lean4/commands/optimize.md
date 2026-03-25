@@ -66,10 +66,14 @@ The following environment variables are set by Gauss when this workflow runs:
 
 ### Phase 5: Generate verified output
 
-1. Emit optimized C or Rust code from the best extraction
-2. Each transformation step has a Lean proof of semantic equivalence
-3. Run `lake build` to verify the full proof chain
-4. Present the output code and explain key transformations
+1. Emit optimized code from the best extraction using `AmoLean.exprToC` or the Rust backend
+2. **Write the generated code to files** using `IO.FS.writeFile` — follow AMO-Lean's convention:
+   - C output: `generated/<name>.c` or `generated/<name>.h`
+   - Rust output: `generated/<name>.rs`
+   Do NOT just print to stdout. The output must be usable files.
+3. Each transformation step has a Lean proof of semantic equivalence
+4. Run `lake build` to verify the full proof chain
+5. Present the output file paths and explain key transformations
 
 ## Rules
 

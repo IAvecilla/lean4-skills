@@ -39,8 +39,11 @@ Run all phases without asking — only stop if truly blocked.
 2. **Setup** — add AMO-Lean/OptiSat deps to lakefile, `lake build`
 3. **Rewrite rules** — discover identities from Mathlib, prove each one in Lean
 4. **Equality saturation** — feed spec + rules into the e-graph, extract optimal form
-5. **Code generation** — emit C/Rust, verify full proof chain with `lake build`
-6. **Report** — summarize transformations, output files, and any limitations
+5. **Code generation** — write generated code to files using `IO.FS.writeFile`:
+   - C output: `generated/<name>.c` or `generated/<name>.h`
+   - Rust output: `generated/<name>.rs`
+   Do NOT just print to stdout. Verify full proof chain with `lake build`.
+6. **Report** — summarize transformations, output file paths, and any limitations
 
 ## Recovery
 
