@@ -32,6 +32,8 @@ Use this skill whenever you're editing Lean 4 proofs, debugging Lean builds, for
 | `/lean4:golf` | Improve Lean proofs for directness, clarity, performance, and brevity |
 | `/lean4:learn` | Interactive teaching and mathlib exploration |
 | `/lean4:doctor` | Diagnostics, cleanup, and migration help |
+| `/lean4:optimize` | Interactive AMO-Lean optimization — spec to verified C/Rust via equality saturation |
+| `/lean4:autooptimize` | Autonomous AMO-Lean optimization — end-to-end without guidance |
 
 ### Which Command?
 
@@ -45,6 +47,8 @@ Use this skill whenever you're editing Lean 4 proofs, debugging Lean builds, for
 | Quality check (read-only) | `/lean4:review` |
 | Simplify proof strategies (mathlib leverage, helpers) | `/lean4:refactor` |
 | Optimizing compiled proofs | `/lean4:golf` |
+| Optimize a spec to verified C/Rust (interactive) | `/lean4:optimize` |
+| Optimize a spec to verified C/Rust (autonomous) | `/lean4:autooptimize` |
 | New to this project / exploring | `/lean4:learn --mode=repo` |
 | Navigating mathlib for a topic | `/lean4:learn --mode=mathlib` |
 | Something not working | `/lean4:doctor` |
